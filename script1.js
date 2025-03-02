@@ -28,14 +28,18 @@ function generateBossOptions() {
         "Vekuta (LBSSJ4)",
         "Wukong Rose",
         "Vekuta (SSJBUI)",
-        "Winter Beerus",
         "Oozaru",
-        "Goku Black"
+        "Goku Black",
+        "Winter Beerus",
+        "Winter Roshi",
+        "Winter Gohan",
+        "Winter Goku",
     ];
     const statsBoss = [
         700, 1000, 1400, 2000, 2600, 3100, 3500, 4000, 6500, 9500, 9000, 16000,
         22000, 28500, 35000, 50000, 70000, 110000, 170000, 245000, 290000,
-        330000, 370000, 420000, 500000, 580000, 630000, 900000, 3500000,
+        330000, 370000, 420000, 500000, 580000, 900000, 3500000, 630000, 255000,
+        13500, 105000,
     ];
 
     const bossSelect = document.getElementById("boss");

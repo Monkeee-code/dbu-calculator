@@ -50,6 +50,12 @@ document.addEventListener("DOMContentLoaded", function(event) {
     generateBossOptions();
 });
 
+document.addEventListener("keypress", event => {
+    if(event.key == "enter") {
+        calculateGain()
+    }
+})
+
 document
     .getElementById("calculateButton")
     .addEventListener("click", calculateGain);

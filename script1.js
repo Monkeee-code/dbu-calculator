@@ -29,11 +29,12 @@ function generateBossOptions() {
         "Wukong Rose",
         "Vekuta (SSJBUI)",
         "Oozaru",
+        "Goku Black"
     ];
     const statsBoss = [
         700, 1000, 1400, 2000, 2600, 3100, 3500, 4000, 6500, 9500, 9000, 16000,
         22000, 28500, 35000, 50000, 70000, 110000, 170000, 245000, 290000,
-        330000, 370000, 420000, 500000, 580000, 5000000,
+        330000, 370000, 420000, 500000, 580000, 900000, 3500000,
     ];
 
     const bossSelect = document.getElementById("boss");

@@ -51,7 +51,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 });
 
 document.addEventListener("keypress", event => {
-    if(event.key == "enter") {
+    if(event.key == "Enter") {
         calculateGain()
     }
 })

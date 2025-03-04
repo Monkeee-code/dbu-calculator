@@ -114,6 +114,8 @@ function calculateGain() {
     const m = 2000000;
     const zee = Math.floor(m * rebirths - 8000000).toLocaleString('en-US');
     
+    console.log(totalMultiplier)
+    console.log(baseMultiplier)
 
     // Affichage des rÃ©sultats
     document.getElementById("result").textContent = `${bossName} : ${Math.floor(finalStats).toLocaleString('en-US')} stats !`;
@@ -121,7 +123,7 @@ function calculateGain() {
     document.getElementById("punch").textContent = `Punch : ${punchstr} strength and ${punchspd} speed !`;
     document.getElementById("abs").textContent = `Defense train move : ${abs} defense`;
     document.getElementById("blast").textContent = `Ki blast : ${punchstr} energy`;
-    document.getElementById("speed").textContent = `Aura boost : â‰ˆ ${speed} speed /s`;
+    document.getElementById("speed").textContent = `Aura boost : ${speed} speed/s`;
 }
 
 

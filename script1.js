@@ -113,9 +113,6 @@ function calculateGain() {
     // Step 6: Calcul du nombre de stats nÃ©cessaires pour rebirth
     const m = 2000000;
     const zee = Math.floor(m * rebirths - 8000000).toLocaleString('en-US');
-    
-    console.log(totalMultiplier)
-    console.log(baseMultiplier)
 
     // Affichage des rÃ©sultats
     document.getElementById("result").textContent = `${bossName} : ${Math.floor(finalStats).toLocaleString('en-US')} stats !`;

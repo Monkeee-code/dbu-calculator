@@ -38,8 +38,8 @@ function generateBossOptions() {
     const statsBoss = [
         700, 1000, 1400, 2000, 2600, 3100, 3500, 4000, 6500, 9500, 9000, 16000,
         22000, 28500, 35000, 50000, 70000, 110000, 170000, 245000, 290000,
-        330000, 370000, 420000, 500000, 580000, 900000, 3500000, 630000, 255000,
-        13500, 105000,
+        330000, 370000, 420000, 500000, 580000, 900000, 3500000, 872000, 255000,
+        42750, 105000,
     ];
 
     const bossSelect = document.getElementById("boss");
@@ -111,12 +111,26 @@ function calculateGain() {
     const speed = (totalMultiplier * 22.5).toLocaleString('en-US');
 
     // Step 6: Calcul du nombre de stats nÃ©cessaires pour rebirth
-    const m = 2000000;
-    const zee = Math.floor(m * rebirths - 8000000).toLocaleString('en-US');
+    function getRebStats() {
+        if (rebirths <= 8) {
+            if (rebirths == 0) {
+                let reb0 = 1000000;
+                return reb0.toLocaleString('en-US');
+            }
+            let reb = rebirths * 1000000;
+            return reb.toLocaleString('en-US');
+        } else if (rebirths > 8) {
+            const m = 2000000;
+            const stats = (m * rebirths - 8000000);
+            return stats.toLocaleString('en-US');
+        }
+        // const m = 2000000
+        // const statToReb = Math.floor(m * rebirths - 8000000).toLocaleString('en-US');
+    };
 
     // Affichage des rÃ©sultats
     document.getElementById("result").textContent = `${bossName} : ${Math.floor(finalStats).toLocaleString('en-US')} stats !`;
-    document.getElementById("reb").textContent = `Stats needed to rebirth : ${zee} stats `;
+    document.getElementById("reb").textContent = `Stats needed to rebirth : ${getRebStats().toString()} stats `;
     document.getElementById("punch").textContent = `Punch : ${punchstr} strength and ${punchspd} speed !`;
     document.getElementById("abs").textContent = `Defense train move : ${abs} defense`;
     document.getElementById("blast").textContent = `Ki blast : ${punchstr} energy`;

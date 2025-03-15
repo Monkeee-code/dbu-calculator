@@ -34,12 +34,13 @@ function generateBossOptions() {
         "Winter Roshi",
         "Winter Gohan",
         "Winter Goku",
+        "Oxking",
     ];
     const statsBoss = [
         700, 1000, 1400, 2000, 2600, 3100, 3500, 4000, 6500, 9500, 9000, 16000,
         22000, 28500, 35000, 50000, 70000, 110000, 170000, 245000, 290000,
         330000, 370000, 420000, 500000, 580000, 900000, 3500000, 872000, 255000,
-        42750, 105000,
+        42750, 105000, 300000,
     ];
 
     const bossSelect = document.getElementById("boss");

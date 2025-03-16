@@ -81,7 +81,7 @@ function calculateGain() {
     const boss = parseInt(bossSelect.value);
     const bossName = bossSelect.options[bossSelect.selectedIndex].text;
 
-    if (isNaN(rebirths)) {
+    if (isNaN(rebirths) || rebirths < 0) {
         document.getElementById("result").textContent =
             "âš ï¸Please enter a valid number for rebirthsâš ï¸";
         return;

@@ -1,55 +1,50 @@
 const talentsMapping = { yes: 1, no: 0 };
 
 function generateBossOptions() {
-    const bossList = [
-        "X Fighter Trainer",
-        "klirin",
-        "Kid Nohag",
-        "Turtle Student",
-        "Radish",
-        "Mapa",
-        "Citizen",
-        "Top X Fighter",
-        "Super Vegetable",
-        "Kaio Student",
-        "Chilly",
-        "Perfect Atom",
-        "SSJ2 Wukong",
-        "Kai-fist Master",
-        "SSJB Wukong",
-        "Broccoli",
-        "SSJG Kakata",
-        "Vegetable (GoD in training)",
-        "Wukong (Omen)",
-        "Vills (50%)",
-        "Vis(20%)",
-        "Vegetable (LBSSJ4)",
-        "Wukong (LBSSJ4)",
-        "Vekuta (LBSSJ4)",
-        "Wukong Rose",
-        "Vekuta (SSJBUI)",
-        "Oozaru",
-        "Goku Black",
-        "Winter Beerus",
-        "Winter Roshi",
-        "Winter Gohan",
-        "Winter Goku",
-        "Oxking",
-    ];
-    const statsBoss = [
-        700, 1000, 1400, 2000, 2600, 3100, 3500, 4000, 6500, 9500, 9000, 16000,
-        22000, 28500, 35000, 50000, 70000, 110000, 170000, 245000, 290000,
-        330000, 370000, 420000, 500000, 580000, 900000, 3500000, 872000, 255000,
-        42750, 105000, 300000,
-    ];
+    const bosses = {
+        "X Fighter Trainer": 700,
+        "klirin": 1000,
+        "Kid Nohag": 1400,
+        "Turtle Student": 2000,
+        "Radish": 2600,
+        "Mapa": 3100,
+        "Citizen": 3500,
+        "Top X Fighter": 4000,
+        "Super Vegetable": 6500,
+        "Kaio Student": 9500,
+        "Chilly": 9000,
+        "Perfect Atom": 16000,
+        "SSJ2 Wukong": 22000,
+        "Kai-fist Master": 28500,
+        "SSJB Wukong": 35000,
+        "Broccoli": 50000,
+        "SSJG Kakata": 70000,
+        "Vegetable (GoD in training)": 110000,
+        "Wukong (Omen)": 170000,
+        "Vills (50%)": 245000,
+        "Vis(20%)": 290000,
+        "Vegetable (LBSSJ4)": 330000,
+        "Wukong (LBSSJ4)": 370000,
+        "Vekuta (LBSSJ4)": 420000,
+        "Wukong Rose": 500000,
+        "Vekuta (SSJBUI)": 580000,
+        "Oozaru": 900000,
+        "Goku Black": 3500000,
+        "Winter Beerus": 872000,
+        "Winter Roshi": 255000,
+        "Winter Gohan": 42750,
+        "Winter Goku": 105000,
+	    "Oxking": 300000
+    }
 
     const bossSelect = document.getElementById("boss");
-    bossList.forEach((boss, index) => {
+
+    for (const boss in bosses){
         const option = document.createElement("option");
         option.text = boss;
-        option.value = statsBoss[index];
+        option.value = bosses[boss];
         bossSelect.appendChild(option);
-    });
+    }
 }
 
 document.addEventListener("DOMContentLoaded", function(event) {

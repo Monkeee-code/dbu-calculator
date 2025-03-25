@@ -30,10 +30,10 @@ function generateBossOptions() {
         "Vekuta (SSJBUI)": 580000,
         "Oozaru": 900000,
         "Goku Black": 3500000,
-        "Winter Beerus": 872000,
-        "Winter Roshi": 255000,
-        "Winter Gohan": 42750,
-        "Winter Goku": 105000,
+        "Winter Beerus [REMOVED]": 872000,
+        "Winter Roshi [REMOVED]": 255000,
+        "Winter Gohan [REMOVED]": 42750,
+        "Winter Goku [REMOVED]": 105000,
 	    "Oxking": 300000
     }
 
@@ -98,6 +98,8 @@ function calculateGain() {
         totalMultiplier += (2 * baseMultiplier);
     } else if (boost == "FourTime") {
         totalMultiplier += (3 * baseMultiplier);
+    } else if (boost == "FiveTime") {
+        totalMultiplier += (3 * baseMultiplier)
     }
     // Step 5: Calcul final avec le boss
     const finalStats = totalMultiplier * boss; // Coefficient final appliquÃ© au boss
@@ -109,10 +111,10 @@ function calculateGain() {
     // Step 6: Calcul du nombre de stats nÃ©cessaires pour rebirth
     function getRebStats() {
         if (rebirths <= 9) {
-            let reb = (rebirths * 1000000) + 1000000;
+            let reb = (rebirths * 500000) + 500000;
             return reb.toLocaleString('en-US');
         } else if (rebirths > 9) {
-            const stats = 10000000 + ((rebirths-9) * 2000000);
+            const stats = (1000000 * rebirths) + 500000;
             return stats.toLocaleString('en-US');
         }
         // const m = 2000000

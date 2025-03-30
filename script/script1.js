@@ -34,7 +34,9 @@ function generateBossOptions() {
         "Winter Roshi [REMOVED]": 255000,
         "Winter Gohan [REMOVED]": 42750,
         "Winter Goku [REMOVED]": 105000,
-	    "Oxking": 300000
+	    "Oxking": 300000,
+        "WT Announcer": 106250,
+        "Citizen 2": 106250,
     }
 
     const bossSelect = document.getElementById("boss");
@@ -99,7 +101,7 @@ function calculateGain() {
     } else if (boost == "FourTime") {
         totalMultiplier += (3 * baseMultiplier);
     } else if (boost == "FiveTime") {
-        totalMultiplier += (3 * baseMultiplier)
+        totalMultiplier += (4 * baseMultiplier)
     }
     // Step 5: Calcul final avec le boss
     const finalStats = totalMultiplier * boss; // Coefficient final appliquÃ© au boss

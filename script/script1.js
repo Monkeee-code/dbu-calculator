@@ -34,7 +34,7 @@ function generateBossOptions() {
         "Winter Roshi [REMOVED]": 255000,
         "Winter Gohan [REMOVED]": 42750,
         "Winter Goku [REMOVED]": 105000,
-	    "Oxking": 300000,
+	      "Oxking": 300000,
         "WT Announcer": 106250,
         "Citizen 2": 106250,
     }

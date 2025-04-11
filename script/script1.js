@@ -49,12 +49,12 @@ function generateBossOptions() {
     }
 }
 
-document.addEventListener("DOMContentLoaded", function(event) {
+document.addEventListener("DOMContentLoaded", (event) => {
     generateBossOptions();
 });
 
 document.addEventListener("keypress", event => {
-    if(event.key == "Enter") {
+    if(event.key == "Enter" || event.key == "Space") {
         calculateGain()
     }
 })
@@ -63,11 +63,11 @@ document
     .getElementById("calculateButton")
     .addEventListener("click", calculateGain);
 
-function formatNumberWithUnit(number, unit) {
-    if (number === 0) return '';
-    if (number === 1) return number;
-    return number + ' ';
-}
+// function formatNumberWithUnit(number, unit) {
+//     if (number === 0) return '';
+//     if (number === 1) return number;
+//     return number + ' ';
+// }
 
 function calculateGain() {
     const rebirths = parseInt(document.getElementById("rebirths").value);

@@ -96,7 +96,7 @@ function calculateGain() {
 
     if (isNaN(rebirths) || rebirths < 0) {
         document.getElementById("result").textContent =
-            "âš ï¸Please enter a valid number for rebirthsâš ï¸";
+            "Please enter a valid number for rebirths";
         return;
     }
 

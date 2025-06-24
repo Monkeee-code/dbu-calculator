@@ -1,3 +1,5 @@
+// Toggle For website's elements!
+
 const isAvailable = false
 if (!isAvailable) {
     const hidder = document.createElement("div");

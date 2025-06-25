@@ -1,6 +1,6 @@
 // Toggle For website's elements!
 
-const isAvailable = true
+const isAvailable = false
 if (!isAvailable) {
     const hidder = document.createElement("div");
     hidder.style.width = "100%";

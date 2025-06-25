@@ -7,8 +7,8 @@ if (isset($_GET['code'])) {
 
     $token_url = 'https://discord.com/api/oauth2/token';
     $client_id = '1387373756778807366';
-    $client_secret = 'teIYgSKv1YAVZwkiTqDwYAE7Xj8Okilv';
-    $redirect_uri = 'http://localhost/Page/chat_callback.php';
+    $client_secret = 'LEAK';
+    $redirect_uri = '';
 
     $data = [
         'client_id' => $client_id,

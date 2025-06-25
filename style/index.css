@@ -66,9 +66,9 @@ body {
   text-align: center;
 }
 
-#join_container{
+#join_container {
 
-  
+  color: white;
   height: 20rem;
   top: 90%;
   width: 100%;
@@ -81,7 +81,8 @@ body {
   justify-content: center;
   align-items: center;
   border-radius: 10px;
-  
+  border: 2px solid yellow;
+  border-radius: 20px;
   margin-top: 9%;
 
 }

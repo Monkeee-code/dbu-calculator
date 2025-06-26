@@ -9,7 +9,7 @@ if (!isAvailable) {
     hidder.style.color = "black";
     hidder.appendChild(document.querySelector("body"));
     setTimeout(async () => {
-        window.prompt("This page has been due to developers, hidding it!\nIf you have any questions, join our discord: https://discord.gg/dAtcaSmDSs", "https://discord.gg/dAtcaSmDSs")        
+        window.prompt("This page has been hidden due to developers, hidding it!\nIf you have any questions, join our discord: https://discord.gg/dAtcaSmDSs", "https://discord.gg/dAtcaSmDSs")        
         }, 1000)
 }
 

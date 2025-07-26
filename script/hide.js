@@ -1,4 +1,4 @@
-const isAvailable = false
+const isAvailable = true
 if (!isAvailable) {
     const hidder = document.createElement("div");
     hidder.style.width = "100%";

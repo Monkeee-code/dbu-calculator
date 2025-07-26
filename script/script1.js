@@ -2,33 +2,33 @@ const talentsMapping = { yes: 1, no: 0 };
 
 function generateBossOptions() {
     const bosses = {
-        "X Fighter Trainer": 350,
-        "klirin": 1200, // 1.2k
-        "Roshi": 1900, // 1.9k
-        "Kid Nohag": 3800, // 3.8k
-        "Radish": 8000, // 8k
-        "Mapa": 13000, // 13k
-        "Citizen": 90000, // 90k
-        "Vegetable(Saya Saga)": 27000, // 27k
-        "Lord Sloog": 50000, // 50k
-        "Chilly": 200000, // 200k
-        "No. 17": 400000, // 400k
-        "Perfect Atom": 900000, // 900k
-        "Z Broccoli": 1500000, // 1.5M
-        "Super Boo": 3200000, // 3.2M
-        "Kakata (SSJ)": 5700000, // 5.7M
-        "Vills (1%)": 12000000, // 12M
-        "Gold Chilly": 50000000, // 50M
-        "Merged Zamas": 95000000, // 95M
-        "Broccoli": 165000000, // 165M
-        "Jiran the Gray": 370000000, // 370M
-        "Vegetable (Ultra Ego)": 800000000, // 800M
-        "Black Chilly": 2700000000, // 2.7B
-        "Vills (TGOD)": 8400000000, // 8.4B
-        "Vis (UI)": 45000000000, // 45B
-        "Xicor": 8000000000000, // 8T
-        "Wukong (SSJB3)": 600000000000000, // 600T
-        "Kakata (Ego Instinct)": 9000000000000000 // 9Q
+        "=== Select a boss ===": "No Value",
+        "=== Earth ===": "No Value",
+        "X Fighter Trainer": 700,
+        "Krillin": 1000,
+        "Kid Nogah": 1400,
+        "Turtle Student": 2400,
+        "Radish": 2600,
+        "Mapa": 3100,
+        "Citizen": 3500,
+        "Top X Fighter": 4000,
+        "Super Vegetable": 6500,
+        "Kaio Student": 9500,
+        "Chilly": 9000,
+        "Perfect Atom": 16000,
+        "SSJ2 Wukong": 22000,
+        "Kai-fist Master": 28500,
+        "SSJB Wukong": 35000,
+        "Broccoli": 50000,
+        "SSJG Kakata": 70000,
+        "=== Bills Planet ===": "No Value",
+        "Vegetable (GoD in training)": 110000,
+        "Wukong (Omen)": 170000,
+        "Vills (50%)": 245000,
+        "Vis (20%)": 290000,
+        "Vegetable (LBSSJ4)": 330000,
+        "Vekuta (LBSSJ4)": 420000,
+        "Wukong (MUI)": 680000
     }
 
     const bossSelect = document.getElementById("boss");
@@ -77,7 +77,7 @@ function calculateGain() {
     }
 
     // Step 1: Calculating the base coefficient with rebirths
-    const baseMultiplier = 1 + (rebirths * 0.35); // X = 1 + (rebirths * 0.5)
+    const baseMultiplier = 1 + (rebirths * 0.20); // X = 1 + (rebirths * 0.5)
 
     // Step 2: Ajout des talents
     let totalMultiplier = baseMultiplier; // We start from the base multiplier
@@ -103,14 +103,17 @@ function calculateGain() {
     const speed = (totalMultiplier * 22.5).toLocaleString('en-US');
 
     // Step 6: Calcul du nombre de stats nÃ©cessaires pour rebirth
-    function getRebStats() {
-        const n = 2000000 * 1.5 * rebirths; // 1.5 * 2M * rebirths
-        return n.toLocaleString('en-US');
-    };
+    const x = 2000000+(2000000*rebirths);
+    const rebs = x.toLocaleString('en-US');
+
+    if (bossSelect.value == "No Value") {
+        alert("Please select a valid boss.");
+        return;
+    }
 
     // Affichage des rÃ©sultats
     document.getElementById("result").textContent = `${bossName} : ${Math.floor(finalStats).toLocaleString('en-US')} stats !`;
-    document.getElementById("reb").textContent = `Stats needed to rebirth : ${getRebStats().toString()} stats `;
+    document.getElementById("reb").textContent = `Stats needed to rebirth : ${rebs} stats `;
     document.getElementById("punch").textContent = `Punch : ${punchstr} strength and ${punchspd} speed !`;
     document.getElementById("abs").textContent = `Defense train move : ${abs} defense`;
     document.getElementById("blast").textContent = `Ki blast : ${punchstr} energy`;

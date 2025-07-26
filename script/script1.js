@@ -51,9 +51,9 @@ document.addEventListener("keypress", event => {
     }
 })
 
-document
-    .getElementById("calculateButton")
-    .addEventListener("click", calculateGain());
+// document
+//     .getElementById("calculateButton")
+//     .addEventListener("click", calculateGain());
 
 // function formatNumberWithUnit(number, unit) {
 //     if (number === 0) return '';

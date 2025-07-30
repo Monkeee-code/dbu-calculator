@@ -107,7 +107,7 @@ function calculateGain() {
     const rebs = x.toLocaleString('en-US');
 
     if (bossSelect.value == "No Value") {
-        alert("Please select a valid boss.");
+        document.getElementById("result").textContent = "Please select a valid boss.";
         return;
     }
 

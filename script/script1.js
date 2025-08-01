@@ -28,7 +28,8 @@ function generateBossOptions() {
         "Vis (20%)": 290000,
         "Vegetable (LBSSJ4)": 330000,
         "Vekuta (LBSSJ4)": 420000,
-        "Wukong (MUI)": 680000
+        "Wukong (MUI)": 680000,
+        "Nohag (Beast)": 780000
     }
 
     const bossSelect = document.getElementById("boss");

@@ -78,7 +78,7 @@ function calculateGain() {
     }
 
     // Step 1: Calculating the base coefficient with rebirths
-    const baseMultiplier = 1 + (rebirths * 0.20); // X = 1 + (rebirths * 0.5)
+    const baseMultiplier = 1 + (rebirths * 0.40); // X = 1 + (rebirths * 0.5)
 
     // Step 2: Ajout des talents
     let totalMultiplier = baseMultiplier; // We start from the base multiplier

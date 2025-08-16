@@ -4,23 +4,23 @@ function generateBossOptions() {
     const bosses = {
         "=== Select a boss ===": "No Value",
         "=== Earth ===": "No Value",
-        "X Fighter Trainer": 700,
-        "Krillin": 1000,
-        "Kid Nogah": 1400,
-        "Turtle Student": 2400,
-        "Radish": 2600,
-        "Mapa": 3100,
-        "Citizen": 3500,
-        "Top X Fighter": 4000,
-        "Super Vegetable": 6500,
-        "Kaio Student": 9500,
-        "Chilly": 9000,
-        "Perfect Atom": 16000,
-        "SSJ2 Wukong": 22000,
-        "Kai-fist Master": 28500,
-        "SSJB Wukong": 35000,
-        "Broccoli": 50000,
-        "SSJG Kakata": 70000,
+        "X Fighter Trainer": 1000,
+        "Krillin": 1400,
+        "Kid Nogah": 2000,
+        "Turtle Student": 2500,
+        "Radish": 3200,
+        "Mapa": 4000,
+        "Citizen": 5500,
+        "Top X Fighter": 6000,
+        "Super Vegetable": 8000,
+        "Kaio Student": 10000,
+        "Chilly": 15000,
+        "Perfect Atom": 20000,
+        "SSJ2 Wukong": 25000,
+        "Kai-fist Master": 35000,
+        "SSJB Wukong": 45000,
+        "Broccoli": 70000,
+        "SSJG Kakata": 85000,
         "=== Bills Planet ===": "No Value",
         "Vegetable (GoD in training)": 110000,
         "Wukong (Omen)": 170000,
@@ -78,7 +78,7 @@ function calculateGain() {
     }
 
     // Step 1: Calculating the base coefficient with rebirths
-    const baseMultiplier = 1 + (rebirths * 0.20); // X = 1 + (rebirths * 0.5)
+    const baseMultiplier = 1 + (rebirths * 0.40); // X = 1 + (rebirths * 0.5)
 
     // Step 2: Ajout des talents
     let totalMultiplier = baseMultiplier; // We start from the base multiplier
@@ -104,8 +104,15 @@ function calculateGain() {
     const speed = (totalMultiplier * 22.5).toLocaleString('en-US');
 
     // Step 6: Calcul du nombre de stats nÃ©cessaires pour rebirth
-    const x = 2000000+(2000000*rebirths);
-    const rebs = x.toLocaleString('en-US');
+    function rebirthsNeeded() {
+        if (rebirths <= 1000) {
+            const rebs = 200000 + (15000 * rebirths);
+            return rebs.toLocaleString('en-US');
+        } else {
+            const rebs = 200000 + (2000000 * rebirths);
+            return rebs.toLocaleString('en-US');
+        }
+    }
 
     if (bossSelect.value == "No Value") {
         document.getElementById("result").textContent = "Please select a valid boss.";
@@ -114,7 +121,7 @@ function calculateGain() {
 
     // Affichage des rÃ©sultats
     document.getElementById("result").textContent = `${bossName} : ${Math.floor(finalStats).toLocaleString('en-US')} stats !`;
-    document.getElementById("reb").textContent = `Stats needed to rebirth : ${rebs} stats `;
+    document.getElementById("reb").textContent = `Stats needed to rebirth : ${rebirthsNeeded()} stats `;
     document.getElementById("punch").textContent = `Punch : ${punchstr} strength and ${punchspd} speed !`;
     document.getElementById("abs").textContent = `Defense train move : ${abs} defense`;
     document.getElementById("blast").textContent = `Ki blast : ${punchstr} energy`;

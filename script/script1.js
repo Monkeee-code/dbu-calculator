@@ -106,7 +106,7 @@ function calculateGain() {
     // Step 6: Calcul du nombre de stats nÃ©cessaires pour rebirth
     function rebirthsNeeded() {
         if (rebirths <= 1000) {
-            const rebs = 200000 + (15000 * rebirths);
+            const rebs = 200000 + (150000 * rebirths);
             return rebs.toLocaleString('en-US');
         } else {
             const rebs = 200000 + (2000000 * rebirths);

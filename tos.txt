@@ -1,0 +1,31 @@
+Terms of Service (ToS) – DBUCalculator
+
+Last Updated: 17/08/2025
+
+1. Acceptance of Terms
+
+By inviting and/or using DBUCalculator (the "Bot"), you agree to these Terms of Service. If you do not agree, you may not use the Bot.
+
+2. Use of the Bot
+
+You must follow Discord’s Terms of Service and Community Guidelines.
+The Bot is intended for entertainment and utility purposes (e.g., calculations, game stat lookups).
+You may not use the Bot for:
+    Illegal activities
+    Harassment, abuse, or hate speech
+    Automated spamming or self-botting
+
+3. Availability
+
+We do not guarantee uptime, reliability, or permanent availability.
+Features may be added, removed, or changed at any time.
+
+4. Termination
+
+We may restrict or remove access to the Bot for any user or server at our discretion, without prior notice.
+
+5. Liability
+
+The Bot is provided “as is” with no warranties.
+We are not responsible for any damages, incorrect calculations, or issues caused by using the Bot.
+Use of the Bot is at your own risk.

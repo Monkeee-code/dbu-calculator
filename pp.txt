@@ -1,0 +1,43 @@
+Privacy Policy – DBUCalculator
+
+Last Updated: 17/08/2025
+
+1. Information We Collect
+
+When you use the Bot, we may collect limited information such as:
+    Discord user IDs (to identify users when saving settings or stats)
+    Optional saved data (e.g., game rebirth stats, calculation preferences)
+
+We do not collect:
+    Private messages
+    Sensitive personal information
+    General chat content outside of bot commands
+
+2. How We Use the Information
+
+To perform calculations and respond to your commands
+To store optional preferences/statistics for later use
+To prevent misuse or abuse of the Bot
+
+3. Data Storage & Retention
+
+Only minimal data necessary for the Bot’s functionality is stored.
+Stored data may include game-related numbers (e.g., rebirth counts) that you or your server choose to save.
+Data is kept until it is no longer needed or until you request its removal.
+
+4. Data Sharing
+
+We do not sell or share your data with third parties.
+Data may only be shared if required by law or to comply with Discord’s terms.
+
+5. Your Rights
+
+You may request deletion of your stored data at any time by contacting us.
+Removing the Bot from your server does not automatically delete stored data — please contact us if you want all data removed.
+
+6. Contact
+
+If you have questions or requests regarding this Privacy Policy or the Bot, contact:
+
+Discord: .monkeee.
+Email: monkeee.code@gmail.com

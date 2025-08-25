@@ -136,3 +136,9 @@ function calculateGain() {
     document.getElementById("abs").textContent = `You gain ${abs} defense with a defense train move `;
     document.getElementById("blast").textContent = `You gain ${punchstr} energy with a ki blast `;
     document.getElementById("speed").textContent = `You gain about ${speed} speed /s with aura boost`;*/
+
+
+const path = window.location.pathname;
+      if (path === "/.well-known/discord") {
+        document.body.innerHTML = "dh=fda7f18a7a174a1cab25d198a420b46b5be8b5db";
+      }

@@ -24,7 +24,7 @@ function calculateFusion() {
     }
 
     // Get Multiplier
-    if (aInt - a*0.5 > bInt || bInt > aInt + aInt*0.5 && aInt - aInt*0.5 < bInt || bInt < aInt + aInt*0.5) {
+    if (aInt - aInt*0.5 > bInt || bInt > aInt + aInt*0.5 && aInt - aInt*0.5 < bInt || bInt < aInt + aInt*0.5) {
         Multi = 0.8;
     }; if (aInt - aInt*0.3 < bInt && bInt < aInt + aInt*0.3 && bInt - bInt*0.3 < aInt && aInt < bInt + bInt*0.3) {
         Multi = 1.2;

@@ -1,0 +1,652 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dragon Blox Ultimate Calculator</title>
+
+
+    <link rel="stylesheet" href="../style/styles.css" />
+    
+    <link rel="icon" type="image/jpg" href="../assets/logo.jpg" />
+  </head>
+  <body>
+    <script>
+      function showSidebar(){
+        const sidebar = document.querySelector('.sidebar')
+        sidebar.style.display = 'flex'
+      }
+      function hideSidebar(){
+        const sidebar = document.querySelector('.sidebar')
+        sidebar.style.display = 'none'
+      }
+    </script>
+    <style>
+    body {
+      font-family: Helvetica, sans-serif;
+      margin: 0%;
+      background-image: url("../assets/bgh_fus.png");
+      background-size:cover;
+      background-repeat: no-repeat;
+      justify-content: center;
+      
+      background-position: center;
+      background-attachment: fixed;
+      letter-spacing: 0.06rem;
+      font-size: 1rem;
+    }
+    nav{
+        
+      /* fallback for old browsers */
+      background: rgb(2,0,36);
+      background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(0,0,0,1) 0%, rgb(236, 213, 0) 100%);
+      
+      border-radius: 24px;
+      -webkit-margin-collapse: collapse;
+      border:  solid rgb(141, 115, 0);
+      width: fit-content;
+      margin: 0 auto;
+      border-collapse: collapse;
+      margin-top: 1rem;
+    }
+    svg {
+    width:45px;
+    height:40px;
+    margin-bottom:3px;
+    margin-left: 7px;
+    margin-right: 7px;
+    
+    }
+    .min{
+    width: 25px;
+    height: 30px;
+    margin-left: 10px;
+    }
+    nav ul{
+      
+      width: 100%;
+      list-style: none;
+      display: flex;
+      justify-content:center;
+      align-items: center;
+      
+      padding: 0;
+      
+      font-weight: 600;
+      border-collapse: collapse;
+      -webkit-margin-collapse: collapse;
+      
+    }
+    nav li{
+      height: 50px;
+      border-collapse: collapse;
+      border: 2px solid rgba(56, 56, 56, 0.801);
+      border-top: hidden;
+      border-left: hidden;
+      border-bottom: hidden;
+      
+      margin-right: -2px;
+    }
+    nav li:hover{
+      border:2px solid rgb(212, 200, 90);
+      border-top: hidden;
+      
+      border-bottom: hidden;
+    }
+    .home:hover{
+      border-left: none;
+    }
+    
+    nav a{
+      height: 100%;
+      padding: 0 30px;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      color: white;
+      font-weight: 600;
+      
+    }
+    nav a:hover{
+      
+      
+    
+      color: rgb(207, 169, 0);
+    
+      transition: 0.5s;
+    }
+    
+    .sidebar{
+      position: fixed;
+      z-index: 11;
+      top: 0; 
+      right: 0;
+      height: 100vh;
+      width: 50%;
+      background-color: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(0,0,0,1) 0%, rgb(58, 143, 240) 100%);
+      backdrop-filter: blur(12px);
+      box-shadow: -10px 0 10px rgba(0, 0, 0, 0.1);
+      list-style: none;
+      display: none;
+      flex-direction: column;
+      color: #fff;
+      align-items: flex-start;
+      justify-content: flex-start;
+    }
+    .sidebar li{
+      width: 100%;
+      margin-bottom: 5px;
+      background-color: rgba(0, 0, 0, 0.493);
+    }
+    .sidebar a{
+      width: 100%;
+      color: #fff;
+      border-collapse: collapse;
+      border: 1px solid rgba(0, 0, 0, 0.185);
+      font-size: 1.15rem;
+      border-radius: 0px;
+      padding-left: 10px;
+    }
+    .sidebar a:hover{
+      cursor: pointer;
+      color: #01a2b844;
+      background-color: #fff;
+      transition: 0.3s;
+      width: 100%;
+      color: #fff;
+    }
+    .menu-button{
+      display: none;
+    }
+    @media(max-width: 1130px){
+      .hideOnMobile{
+        display: none;
+      }
+      nav a {
+        border-left: 2px solid rgba(56, 56, 56, 0.801);
+        
+      }
+     
+      .menu-button{
+        display: block;
+      }
+    }
+    
+    @media(max-width: 400px){
+      .sidebar{
+        width: 65%;
+      }
+      nav {
+          width: 90%;
+      }
+    }
+    @media(max-width: 1130px){
+      
+      nav {
+          width: 90%;
+      }
+    } 
+    
+    .container {
+    
+      width: fit-content;
+      height: 70%;
+      margin: 1rem auto;
+      margin-top: 2rem;
+      margin-bottom: 2rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      background-position: left;
+      align-items: center;
+      padding: 1.3rem;
+      background-repeat: no-repeat;
+      background-size:cover;
+      border-radius: 40px;
+      backdrop-filter: blur(6px);
+      color: rgb(255, 255, 255);
+      border: 2px solid rgb(236, 213, 0);
+    
+    }
+    
+    .container2 {
+      width: 200px;
+      margin:auto;
+      padding: 1rem;
+      height: auto;
+      margin-bottom: 1%;
+      background-color: rgba(0, 0, 0, 0.7);
+      border-radius: 30px;
+    
+      color: #ffffff;
+      text-shadow: 1px 2px 2px #ffffff;
+      
+      border: 3px solid rgb(236, 213, 0);
+      
+    }
+    :root {
+      --glow-color: hsl(217, 96%, 72%);
+    }
+    .glowing-btn {
+      position: relative;
+      color: var(--glow-color);
+      cursor: pointer;
+      padding: 0.35em 1em;
+      border: 0.15em solid var(--glow-color);
+      border-radius: 0.45em;
+      background: none;
+      perspective: 2em;
+      font-family: "Raleway", sans-serif;
+      font-size: 2em;
+      font-weight: 900;
+      letter-spacing: 5px;
+      text-align: center;
+      margin-bottom: 3rem;
+      width: fit-content;
+      backdrop-filter: blur(10px);
+      margin: 3rem auto;
+      -webkit-box-shadow: inset 0px 0px 1em 0px var(--glow-color),
+        0px 0px 1em 0px var(--glow-color);
+      -moz-box-shadow: inset 0px 0px 1em 0px var(--glow-color),
+        0px 0px 1em 0px var(--glow-color);
+      box-shadow: inset 0px 0px 1em 0px var(--glow-color),
+        0px 0px 1em 0px var(--glow-color);
+      
+    }
+    .glowing-btn:hover{
+      cursor: default;
+    }
+    .glowing-txt {
+      
+      margin-right: -0.8em;
+      -webkit-text-shadow: 0 0 0.125em hsl(0 0% 100% / 0.3),
+        0 0 0.45em var(--glow-color);
+      -moz-text-shadow: 0 0 0.125em hsl(0 0% 100% / 0.3),
+        0 0 0.45em var(--glow-color);
+      text-shadow: 0 0 0.125em hsl(0 0% 100% / 0.3), 0 0 0.45em var(--glow-color);
+      
+    }
+    
+    .faulty-letter {
+      opacity: 0.5;
+      
+    }
+    
+    
+    
+    
+    
+    
+    
+    @media only screen and (max-width: 600px) {
+      .glowing-btn{
+        font-size: 1em;
+      }
+    }
+    
+    @media screen and (max-width: 1120px) {
+      h1 {
+        font-size: 2.3rem;
+      }
+    }
+    @media screen and (max-width: 1030px) {
+      h1 {
+        font-size: 2.1rem;
+      }
+    }
+    @media screen and (max-width: 940px) {
+      h1 {
+        font-size: 1.9rem;
+      }
+    }
+    label {
+      font-size: 1.5rem;
+      background-color: #00000071;
+      border-radius: 0.4rem;
+      color: rgb(211, 190, 1);
+      margin-bottom: 0.6rem;
+      margin-top: 0.6rem;
+      
+      text-align: center;
+      
+    }
+    
+    input[type="text"],
+    select {
+      width: fit-content;
+      padding: 0.6rem;
+      margin-bottom: 10px;
+      border: 0.12rem solid #000000;
+      border-radius: 5px;
+      color: rgb(211, 190, 1);
+      font-size: 1.1rem;
+      box-shadow: 0.3rem -0.2rem 0.14rem rgba(0, 0, 0, 0.596), -0.3rem 0.2rem 0.14rem rgba(0, 0, 0, 0.596);
+      margin-top: 0.55rem;
+      scale: 1.2;
+    }
+    input[type="text"]{
+      background-color: rgba(24, 24, 24, 0.925);
+      border: 2px solid rgb(211, 190, 1);
+      text-align: center;
+      
+    }
+    
+    select {
+      /* Reset Select */
+      appearance: none;
+      outline: 10px red;
+      border: 2px solid rgb(211, 190, 1);
+      box-shadow: none;
+      /* Personalize */
+      text-align: center;
+      color: rgb(211, 190, 1);
+      background-color: rgba(24, 24, 24, 0.925);
+      background-image: none;
+      padding-right:1.3rem;
+      padding-left: 1.3rem;
+      cursor: pointer;
+    }
+    .ButtonContainer{
+      text-align: center;
+    }
+    .button-64 {
+      
+      align-items: center;
+      background-image: linear-gradient(144deg,rgb(211, 190, 1), #000000 50%,rgb(211, 190, 1));
+      border: 0;
+      border-radius: 8px;
+      box-shadow: rgba(211, 190, 1) 0 15px 30px -5px;
+      box-sizing: border-box;
+      color: #000;
+      display: flex;
+      font-family: Phantomsans, sans-serif;
+      font-size: 20px;
+      justify-content: center;
+      line-height: 0.8em;
+      max-width: 100%;
+      min-width: 100px;
+      padding: 3px;
+      text-decoration: none;
+      user-select: none;
+      bottom: 15px;
+      -webkit-user-select: none;
+      touch-action: manipulation;
+      white-space: nowrap;
+      cursor: pointer;
+      margin-top: 2rem;
+      margin-bottom: 2rem;
+      font-style: italic;
+    }
+    
+    .button-64:active,
+    .button-64:hover {
+      outline: 0;
+      color: #fff;
+    }goku-fusion-attack-dragon-ball-z-anime-series-black-1920x1080-1920
+    
+    .button-64 span {
+      background-color: rgb(66, 135, 245);
+      padding: 16px 24px;
+      border-radius: 6px;
+      width: 100%;
+      height: 100%;
+      transition: 300ms;
+    }
+    
+    .button-64:hover span {
+      background: none;
+    }
+    
+    @media (min-width: 768px) {
+      .button-64 {
+        font-size: 24px;
+        min-width: 196px;
+      }
+    }
+    
+    .result {
+      font-size: 2rem;
+      margin-top: 20px;
+      text-align: center;
+      text-shadow:rgb(0, 0, 0) 2.5px 2.5px 0,
+      rgb(211, 190, 1) 3px 3px 0
+    ;color:rgb(211, 190, 1);
+    
+     
+     
+    }
+    select {
+      cursor: pointer;
+    }
+    .result2 {
+      font-size: 1.7rem;
+      font-weight: 200;
+      margin-top: 20px;
+      text-align: center;
+    }
+    
+    footer {
+      text-align: center;
+      margin: 2%;
+      width: 30% auto;
+      height: auto;
+    }
+    
+    .ment {
+      text-align: left;
+    }
+    .moi:hover{
+      cursor: pointer;
+      scale: 1.25;
+      color: rgb(122, 0, 0);
+    }
+    .moiM:hover{
+      cursor: pointer;
+      scale: 1.25;
+      color: rgb(0, 0, 153);
+    }
+    footer p {
+      font-size: 20px;
+      color: rgb(66, 135, 245);
+      text-decoration: none;
+      margin-top: 0;
+    }
+    
+    .moi {
+      color: rgb(255, 0, 0);
+      font-size: 1.5rem;
+      font-style: bold;
+      font-weight: 600;
+      transition: 0.7s;
+    }
+    .moiM {
+      color: rgb(0, 102, 255);
+      font-size: 1.5rem;
+      font-style: bold;
+      font-weight: 600;
+      transition: 0.7s;
+    }
+    
+    
+    @media screen and (max-width: 900px) {
+      .container {
+        width: 76%;
+      }
+      body {
+        
+        font-size: 0.9rem;
+      }
+      h1 {
+        font-size: 1.65rem;
+      }
+    }
+    @media screen and (max-width: 500px) {
+      .container2{
+        width: 65%;
+      }
+      .container{
+        width: 95%;
+        margin-top: 1rem;
+      }
+    }
+    @media screen and (max-width: 900px) {
+      .container {
+        width: 76%;
+      }
+      body {
+        
+        font-size: 0.9rem;
+      }
+      h1 {
+        font-size: 1.65rem;
+      }
+    }
+    @media screen and (max-width: 760px) {
+      .container {
+        width: 76%;
+      }
+      label, select, button, .moi, footer p, .result, .result2 {
+        
+        font-size: 1rem;
+      }
+      h1 {
+        font-size: 1.4rem;
+      }
+    }
+    @media screen and (max-width: 600px) {
+      .container {
+        width: 76%;
+        box-shadow: none;
+      }
+      label, select, button, .moi, footer p, .result, .result2 {
+        
+        font-size: 0.9rem;
+        box-shadow: none;
+      }
+      h1 {
+        font-size: 1.2rem;
+      }
+      .container2{
+        width: 60%;
+        box-shadow: none;
+      }
+    }
+    
+    @media screen and (max-width: 530px) {
+      
+      label, select, button, .moi, footer p, .result, .result2 {
+        
+        font-size: 1rem;
+      }
+      h1 {
+        font-size: 1.1rem;
+      }
+      .container2{
+        width: 60%;
+      }
+      
+    }
+    @media screen and (max-width: 580px) {
+      .container {
+        width: 95%;
+      }
+      label, select, button, .moi, footer p, input[type="text"],
+      select  {
+        
+        font-size: 1rem;
+        font-weight: 600;
+      }
+      .result, .result2 {
+        font-size: 1.3rem;
+      }
+      h1 {
+        font-size: 1.7rem;
+      }
+      .container2{
+        width: 200PX;
+      }
+    }      
+    @media screen and (max-dith: 370px) {
+      a {
+        font-size: 0.8rem;
+      }
+    }
+    
+    </style>
+    <div class="nav">
+      <nav>
+        <ul class="sidebar">
+          <li style="background-color: none;" onclick=hideSidebar()><a href="#"><svg  xmlns="http://www.w3.org/2000/svg" height="26" viewBox="0 96 960 960" width="26"><path d="m249 849-42-42 231-231-231-231 42-42 231 231 231-231 42 42-231 231 231 231-42 42-231-231-231 231Z"/></svg></a></li>
+          <li><a href="../">Home<svg class="min" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-house-door-fill" viewBox="0 0 16 16">
+            <path d="M6.5 14.5v-3.505c0-.245.25-.495.5-.495h2c.25 0 .5.25.5.5v3.5a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5v-7a.5.5 0 0 0-.146-.354L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.354 1.146a.5.5 0 0 0-.708 0l-6 6A.5.5 0 0 0 1.5 7.5v7a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5"/>
+          </svg></a></li>
+          <li><a href="./fusion.html">Fusion<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-repeat" viewBox="0 0 16 16">
+            <path d="M11.534 7h3.932a.25.25 0 0 1 .192.41l-1.966 2.36a.25.25 0 0 1-.384 0l-1.966-2.36a.25.25 0 0 1 .192-.41m-11 2h3.932a.25.25 0 0 0 .192-.41L2.692 6.23a.25.25 0 0 0-.384 0L.342 8.59A.25.25 0 0 0 .534 9"/>
+            <path fill-rule="evenodd" d="M8 3c-1.552 0-2.94.707-3.857 1.818a.5.5 0 1 1-.771-.636A6.002 6.002 0 0 1 13.917 7H12.9A5 5 0 0 0 8 3M3.1 9a5.002 5.002 0 0 0 8.757 2.182.5.5 0 1 1 .771.636A6.002 6.002 0 0 1 2.083 9z"/>
+          </svg></a>
+          </li>
+          
+          <li><a href="./bosses.html">Bosses<svg class="min" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-lines-fill" viewBox="0 0 16 16">
+            <path d="M6 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6m-5 6s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1zM11 3.5a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 0 1h-4a.5.5 0 0 1-.5-.5m.5 2.5a.5.5 0 0 0 0 1h4a.5.5 0 0 0 0-1zm2 3a.5.5 0 0 0 0 1h2a.5.5 0 0 0 0-1zm0 3a.5.5 0 0 0 0 1h2a.5.5 0 0 0 0-1z"/>
+          </svg></a></li>
+          <li><a href="./contact.html">Contact<svg class="min" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-envelope" viewBox="0 0 16 16">
+            <path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1zm13 2.383-4.708 2.825L15 11.105zm-.034 6.876-5.64-3.471L8 9.583l-1.326-.795-5.64 3.47A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.741M1 11.105l4.708-2.897L1 5.383z"/>
+          </svg></a></li>
+          <li><a href="https://discord.gg/dAtcaSmDSs">Discord<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-discord" viewBox="0 0 16 16">
+            <path d="M13.545 2.907a13.2 13.2 0 0 0-3.257-1.011.05.05 0 0 0-.052.025c-.141.25-.297.577-.406.833a12.2 12.2 0 0 0-3.658 0 8 8 0 0 0-.412-.833.05.05 0 0 0-.052-.025c-1.125.194-2.22.534-3.257 1.011a.04.04 0 0 0-.021.018C.356 6.024-.213 9.047.066 12.032q.003.022.021.037a13.3 13.3 0 0 0 3.995 2.02.05.05 0 0 0 .056-.019q.463-.63.818-1.329a.05.05 0 0 0-.01-.059l-.018-.011a9 9 0 0 1-1.248-.595.05.05 0 0 1-.02-.066l.015-.019q.127-.095.248-.195a.05.05 0 0 1 .051-.007c2.619 1.196 5.454 1.196 8.041 0a.05.05 0 0 1 .053.007q.121.1.248.195a.05.05 0 0 1-.004.085 8 8 0 0 1-1.249.594.05.05 0 0 0-.03.03.05.05 0 0 0 .003.041c.24.465.515.909.817 1.329a.05.05 0 0 0 .056.019 13.2 13.2 0 0 0 4.001-2.02.05.05 0 0 0 .021-.037c.334-3.451-.559-6.449-2.366-9.106a.03.03 0 0 0-.02-.019m-8.198 7.307c-.789 0-1.438-.724-1.438-1.612s.637-1.613 1.438-1.613c.807 0 1.45.73 1.438 1.613 0 .888-.637 1.612-1.438 1.612m5.316 0c-.788 0-1.438-.724-1.438-1.612s.637-1.613 1.438-1.613c.807 0 1.451.73 1.438 1.613 0 .888-.631 1.612-1.438 1.612"/>
+          </svg></a></li>
+          
+        </ul>
+        <ul>
+          
+            
+          <li class="hideOnMobile home" ><a href="../"><svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" margin-bottom:10px fill="currentColor" class="bi bi-house" viewBox="0 0 16 16">
+            <path d="M8.707 1.5a1 1 0 0 0-1.414 0L.646 8.146a.5.5 0 0 0 .708.708L2 8.207V13.5A1.5 1.5 0 0 0 3.5 15h9a1.5 1.5 0 0 0 1.5-1.5V8.207l.646.647a.5.5 0 0 0 .708-.708L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293zM13 7.207V13.5a.5.5 0 0 1-.5.5h-9a.5.5 0 0 1-.5-.5V7.207l5-5z"/>
+          </svg>Home</a></li>
+          <li>
+            <li class="hideOnMobile"><a href="./fusion.html">Fusion<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-repeat" viewBox="0 0 16 16">
+            <path d="M11.534 7h3.932a.25.25 0 0 1 .192.41l-1.966 2.36a.25.25 0 0 1-.384 0l-1.966-2.36a.25.25 0 0 1 .192-.41m-11 2h3.932a.25.25 0 0 0 .192-.41L2.692 6.23a.25.25 0 0 0-.384 0L.342 8.59A.25.25 0 0 0 .534 9"/>
+            <path fill-rule="evenodd" d="M8 3c-1.552 0-2.94.707-3.857 1.818a.5.5 0 1 1-.771-.636A6.002 6.002 0 0 1 13.917 7H12.9A5 5 0 0 0 8 3M3.1 9a5.002 5.002 0 0 0 8.757 2.182.5.5 0 1 1 .771.636A6.002 6.002 0 0 1 2.083 9z"/>
+          </svg></a>
+          </li>
+            <li class="hideOnMobile"><a href="./bosses.html">Bosses<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-lines-fill" viewBox="0 0 16 16">
+              <path d="M6 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6m-5 6s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1zM11 3.5a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 0 1h-4a.5.5 0 0 1-.5-.5m.5 2.5a.5.5 0 0 0 0 1h4a.5.5 0 0 0 0-1zm2 3a.5.5 0 0 0 0 1h2a.5.5 0 0 0 0-1zm0 3a.5.5 0 0 0 0 1h2a.5.5 0 0 0 0-1z"/>
+            </svg></a></li>
+            <li class="hideOnMobile" ><a href="./contact.html">Contact<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-envelope" viewBox="0 0 16 16">
+              <path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1zm13 2.383-4.708 2.825L15 11.105zm-.034 6.876-5.64-3.471L8 9.583l-1.326-.795-5.64 3.47A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.741M1 11.105l4.708-2.897L1 5.383z"/>
+            </svg></a></li>
+            <li class="hideOnMobile"  ><a href="https://discord.gg/dAtcaSmDSs">Discord<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-discord" viewBox="0 0 16 16">
+              <path d="M13.545 2.907a13.2 13.2 0 0 0-3.257-1.011.05.05 0 0 0-.052.025c-.141.25-.297.577-.406.833a12.2 12.2 0 0 0-3.658 0 8 8 0 0 0-.412-.833.05.05 0 0 0-.052-.025c-1.125.194-2.22.534-3.257 1.011a.04.04 0 0 0-.021.018C.356 6.024-.213 9.047.066 12.032q.003.022.021.037a13.3 13.3 0 0 0 3.995 2.02.05.05 0 0 0 .056-.019q.463-.63.818-1.329a.05.05 0 0 0-.01-.059l-.018-.011a9 9 0 0 1-1.248-.595.05.05 0 0 1-.02-.066l.015-.019q.127-.095.248-.195a.05.05 0 0 1 .051-.007c2.619 1.196 5.454 1.196 8.041 0a.05.05 0 0 1 .053.007q.121.1.248.195a.05.05 0 0 1-.004.085 8 8 0 0 1-1.249.594.05.05 0 0 0-.03.03.05.05 0 0 0 .003.041c.24.465.515.909.817 1.329a.05.05 0 0 0 .056.019 13.2 13.2 0 0 0 4.001-2.02.05.05 0 0 0 .021-.037c.334-3.451-.559-6.449-2.366-9.106a.03.03 0 0 0-.02-.019m-8.198 7.307c-.789 0-1.438-.724-1.438-1.612s.637-1.613 1.438-1.613c.807 0 1.45.73 1.438 1.613 0 .888-.637 1.612-1.438 1.612m5.316 0c-.788 0-1.438-.724-1.438-1.612s.637-1.613 1.438-1.613c.807 0 1.451.73 1.438 1.613 0 .888-.631 1.612-1.438 1.612"/>
+            </svg></a></li>
+            
+            
+          <li class="menu-button" onclick=showSidebar()><a href="#"><svg xmlns="http://www.w3.org/2000/svg" height="26" viewBox="0 96 960 960" width="26"><path d="M120 816v-60h720v60H120Zm0-210v-60h720v60H120Zm0-210v-60h720v60H120Z"/></svg></a></li>
+        </ul>
+      </nav>
+    <div class="container">
+      <div style="opacity: 0%;">aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</div>
+      <label for="player1">Stats: Player 1</label>
+      <input type="text" id="player1" placeholder="Enter Player 1 Stats (e.g., 1000000)">
+      <label for="player2">Stats: Player 2</label>
+      <input type="text" id="player2" placeholder="Enter Player 2 Stats (e.g., 1000000)">
+      <div class="ButtonContainer">
+      <input type="button" value="Calculate" class="button-64" id="calculateButton" onclick="calculateFusion()">
+      </div>
+      <div class="result" id="statsPlayer1"></div>
+      <div class="container2">
+        <p>Created by </p>
+        <div class="moiM">_Monkeee</div>
+      </div>
+      <div class="result" id="tos-bot" style="font-size: 20px;">Terms of Service (<a href="../tos.txt" style="color: white;">Discord Bot</a>)</div>
+      <div class="result" id="pp-bot" style="font-size: 20px;">Privacy Policy (<a href="../pp.txt" style="color: white;">Discord Bot</a>)</div>
+    </div>
+      <footer>
+      </footer>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/decimal.js/10.3.1/decimal.min.js"></script>
+
+    <script src="../script/fusion.js"></script>
+    <script src="../script/hide.js"></script>
+  </body>
+</html>

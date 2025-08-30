@@ -30,7 +30,11 @@ function generateBossOptions() {
         "Vekuta (LBSSJ4)": 420000,
         "Wukong (MUI)": 680000,
         "Vegetable (Ultra Ego)": 730000,
-        "Nohag (Beast)": 780000
+        "Nohag (Beast)": 780000,
+        "=== T.O.P ===": "No Value",
+        "Piclaw (Base)": 830000,
+        "Caula (Base)": 880000,
+        "Gohan (Potential Unlocked)": 910000,
     }
 
     const bossSelect = document.getElementById("boss");
